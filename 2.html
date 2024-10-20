@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gallery Page</title>
+    <style>
+        /* Основные стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: url('https://www.nastol.com.ua/pic/202401/1920x1080/nastol.com.ua-555290.jpg') no-repeat center center fixed;
+            background-size: cover; 
+        }
+
+        /* Стили навигации */
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #f4d03f;
+        }
+
+        /* Стили заголовка */
+        header {
+            color: #fff;
+            height: 300px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px #000;
+        }
+
+        /* Галерея */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px 0;
+            max-width: 1100px;
+            margin: 0 auto;
+            
+        }
+
+        .gallery-item {
+            flex-basis: 300px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .gallery-item .gallery-text {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .gallery-item h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .gallery-item p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Стили подвала */
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .gallery-item {
+                flex-basis: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="1.html">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Our Amazing Gallery</h1>
+    </header>
+
+    <section id="gallery" class="gallery">
+        <!-- Картка галереї 1 -->
+        <div class="gallery-item">
+            <img src="https://i.pinimg.com/originals/8b/98/e9/8b98e99a9015c5e846bcd74b2391a925.jpg" alt="Image 1">
+            <div class="gallery-text">
+                <h3>Picture 1</h3>
+                <p>This is a description for the first image in our gallery.</p>
+            </div>
+        </div>
+
+        <!-- Картка галереї 2 -->
+        <div class="gallery-item">
+            <img src="https://th.bing.com/th/id/OIP.gxp88552SEFotSnUSG-X2wHaFL?rs=1&pid=ImgDetMain" alt="Image 2">
+            <div class="gallery-text">
+                <h3>Picture 2</h3>
+                <p>This is a description for the second image in our gallery.</p>
+            </div>
+        </div>
+
+        <!-- Картка галереї 3 -->
+        <div class="gallery-item">
+            <img src="https://th.bing.com/th/id/R.1943c0971d243097b2760e4dc726d837?rik=CKGWbc65FcHekg&pid=ImgRaw&r=0" alt="Image 3">
+            <div class="gallery-text">
+                <h3>Picture 3</h3>
+                <p>This is a description for the third image in our gallery.</p>
+            </div>
+        </div>
+
+        <!-- Картка галереї 4 -->
+        <div class="gallery-item">
+            <img src="https://fullhdoboi.ru/wp-content/uploads/_ph/6/333385821.jpg" alt="Image 4">
+            <div class="gallery-text">
+                <h3>Picture 4</h3>
+                <p>This is a description for the fourth image in our gallery.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://i.travel.ru/images2/2017/05/object259024/crimea.jpg" alt="Image 4">
+            <div class="gallery-text">
+                <h3>Picture 5</h3>
+                <p>This is a description for the fifth image in our gallery.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://th.bing.com/th/id/R.861247d2f7873250deba0b649eec74ef?rik=eVK1TS8lDCll2g&riu=http%3a%2f%2fdrasler.ru%2fwp-content%2fuploads%2f2018%2f05%2f%d0%9a%d0%b0%d1%80%d1%82%d0%b8%d0%bd%d0%ba%d0%b8-%d0%bf%d1%80%d0%b8%d1%80%d0%be%d0%b4%d1%8b-%d0%b8-%d1%80%d0%b0%d1%81%d1%82%d0%b5%d0%bd%d0%b8%d0%b9-%d0%bd%d0%b0-%d1%80%d0%b0%d0%b1%d0%be%d1%87%d0%b8%d0%b9-%d1%81%d1%82%d0%be%d0%bb-%d0%bf%d0%be%d0%b4%d0%b1%d0%be%d1%80%d0%ba%d0%b0-2018-3.jpg&ehk=y1Os7yHtF46gWqNkX4VuZ%2fF%2bi9rGlPItjZEBFZKQVB0%3d&risl=&pid=ImgRaw&r=0" alt="Image 4">
+            <div class="gallery-text">
+                <h3>Picture 6</h3>
+                <p>This is a description for the sixth image in our gallery.</p>
+            </div>
+        </div>  
+        
+    </section>
+    
+
+    <footer>
+        <p>© 2024 Cool Website. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

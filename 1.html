@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cool Website</title>
+    <style>
+        /* Основные стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: url('https://www.nastol.com.ua/pic/202401/1920x1080/nastol.com.ua-555290.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* Стили навигации */
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #f4d03f;
+        }
+
+        /* Стили заголовка */
+        header {
+            color: #fff;
+            height: 600px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px #000;
+        }
+
+        /* Кнопка "Вверх" */
+        #backToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 50%;
+            display: none;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        #backToTop:hover {
+            background-color: #555;
+        }
+
+        /* Основной контент */
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 1100px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        section p {
+            margin: 10px 0;
+        }
+
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 20;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            text-align: center;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 20px;
+        }
+
+        .close-btn {
+            color: #333;
+            float: right;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* Стили подвала */
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .modal-content {
+                width: 80%;
+            }
+
+
+        }
+        .page-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .page-button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+
+
+    <header>
+        <h1>Welcome to Cool Website</h1>
+        <button id="openModal">Learn More</button>
+    </header>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum urna vel nulla fermentum, id bibendum purus sagittis.</p>
+        <p>Aliquam erat volutpat. Praesent in eros vel enim malesuada tincidunt at vitae ex. Cras sit amet justo mauris.</p>
+        <a href="2.html" class="page-button">More about us</a>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non lacus sollicitudin, aliquet ipsum sit amet, tristique orci.</p>
+        <p>Quisque varius, orci in volutpat aliquet, est nunc condimentum erat, et dapibus odio leo et risus. Ut blandit viverra urna.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feel free to reach out to us!</p>
+        <p><a href="mailto:gostriknazar5@gmail.com?subject=Website Inquiry&body=Hello, I would like to ask about...">Write to us via Gmail</a></p>
+    </section>
+
+    <footer>
+        <p>© 2024 Cool Website. All Rights Reserved.</p>
+    </footer>
+
+    <button id="backToTop">&#9650;</button>
+
+    <!-- Модальное окно -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>More Information</h2>
+            <p>This is a modal window with additional information about our services or company.</p>
+        </div>
+    </div>
+
+    <script>
+        // Кнопка наверх
+        const backToTop = document.getElementById('backToTop');
+        window.onscroll = function() {
+            if (window.scrollY > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        };
+
+        backToTop.onclick = function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        };
+
+        // Анимация при скролле
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', function() {
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < window.innerHeight - 100) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+
+        // Модальное окно
+        const modal = document.getElementById('modal');
+        const openModal = document.getElementById('openModal');
+        const closeModal = document.querySelector('.close-btn');
+
+        openModal.onclick = function() {
+            modal.style.display = 'flex';
+        };
+
+        closeModal.onclick = function() {
+            modal.style.display = 'none';
+        };
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>
