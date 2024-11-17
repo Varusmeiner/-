@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Крутий Сайт</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background-color: #111;
+        }
+        /* Фонове зображення для всієї сторінки */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: url('https://your-image-url.com/background.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            color: #fff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+        /* Стилі для секцій */
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .section p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.5;
+        }
+        .section img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        /* Секція 1 */
+        .section-one {
+            background: #333;
+        }
+        /* Секція 2 */
+        .section-two {
+            background: #555;
+        }
+        /* Секція 3 */
+        .section-three {
+            background: #777;
+        }
+        /* Стилі для навігації */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        /* Кнопки прокрутки */
+        .scroll-btn {
+            position: absolute;
+            bottom: 30px;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+            animation: bounce 1s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Навігація -->
+    <nav>
+        <ul>
+            <li><a href="#section1">Секція 1</a></li>
+            <li><a href="#section2">Секція 2</a></li>
+            <li><a href="#section3">Секція 3</a></li>
+        </ul>
+    </nav>
+
+    <!-- Фоновий блок -->
+    <div class="hero">
+        <h1>Ласкаво просимо на наш сайт!</h1>
+        <span class="scroll-btn">↓</span>
+    </div>
+
+    <!-- Секція 1 -->
+    <div id="section1" class="section section-one">
+        <h2>Про нас</h2>
+        <p>Ми компанія, що спеціалізується на наданні високоякісних послуг. Наші фахівці працюють на результат і завжди готові до нових викликів.</p>
+        <img src="https://your-image-url.com/section1.jpg" alt="Про нас">
+    </div>
+
+    <!-- Секція 2 -->
+    <div id="section2" class="section section-two">
+        <h2>Наші послуги</h2>
+        <p>Ми пропонуємо широкий спектр послуг, включаючи консалтинг, дизайн, і розробку. Наша мета — це ваша задоволеність та успіх.</p>
+        <img src="https://your-image-url.com/section2.jpg" alt="Наші послуги">
+    </div>
+
+    <!-- Секція 3 -->
+    <div id="section3" class="section section-three">
+        <h2>Контакти</h2>
+        <p>Ви можете зв'язатися з нами через електронну пошту або соціальні мережі. Ми завжди відкриті для нових можливостей і співпраці.</p>
+        <img src="https://your-image-url.com/section3.jpg" alt="Контакти">
+    </div>
+
+    <script>
+        // Додаємо плавну прокрутку до секцій
+        const scrollBtn = document.querySelector('.scroll-btn');
+        scrollBtn.addEventListener('click', () => {
+            document.querySelector('#section1').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>

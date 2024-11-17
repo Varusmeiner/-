@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar with Shadow</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Стилі для навігаційної панелі */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #333; /* Темний фон */
+    padding: 15px 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Тінь тільки вниз */
+}
+
+.navbar ul {
+    list-style: none; /* Видаляє маркери списку */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Центрує елементи */
+}
+
+.navbar li {
+    margin: 0 15px; /* Відступи між кнопками */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #555; /* Зміна кольору при наведенні */
+    border-radius: 4px; /* Заокруглені кути при наведенні */
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Навігаційна панель -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>

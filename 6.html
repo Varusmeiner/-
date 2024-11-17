@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patterned Borders</title>
+    <style>
+        .patterned-box {
+            border: 10px solid; /* Широкий бордер */
+            border-image: url('https://www.example.com/pattern.png') 30 round; /* Зображення для бордера */
+            padding: 15px; /* Відступи всередині бокса */
+            margin: 20px; /* Відступи зовні бокса */
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Тінь */
+        }
+    </style>
+</head>
+<body>
+    <div class="patterned-box">
+        <p>Це текст всередині бокса з візерунчастим бордером.</p>
+    </div>
+</body>
+</html>

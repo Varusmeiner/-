@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>The Best Game Ever - Zelda: Ocarina of Time</title>
+    <style>
+        /* Градієнт для тексту */
+        .gradient-text {
+            font-size: 40px;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ff00cc, #3333ff); /* Рожевий та фіолетовий градієнт */
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        /* Градієнт для фону */
+            body {
+                margin: 0%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center ;
+    align-items: center top;
+                font-family: Arial, sans-serif;
+                background: linear-gradient(135deg, #330066, #ff00cc); /* Фіолетовий і рожевий фон */
+                color: #ffffff;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+        /* Секція для контенту */
+        .content {
+            max-width: 800px;
+            text-align: center;
+            padding: 40px;
+            position: relative;
+        }
+
+        /* Прозорі бокові фотографії */
+        .side-image-left, .side-image-right {
+            position: fixed; /* Закріплені по сторонах */
+            top: 0;
+            width: 200px;
+            height: 100vh; /* Зображення розтягується на 100% висоти екрану */
+            opacity: 0.3;
+            object-fit: cover; /* Забезпечує збереження пропорцій при масштабуванні */
+        }
+
+        .side-image-left {
+            left: 0;
+        }
+
+        .side-image-right {
+            right: 0;
+        }
+
+        /* Кнопка для переміщення */
+        .scroll-button {
+            background-color: #ff00cc;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 18px;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: none; /* Прихована за замовчуванням */
+        }
+
+        /* Стиль для вставок фотографій */
+        .game-image {
+            width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        /* Стиль для секції реєстрації */
+        .registration {
+            background-color: #2c2c3e;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .registration h2 {
+            margin-bottom: 20px;
+            color: #ff00cc;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .registration input[type="text"],
+        .registration input[type="email"],
+        .registration input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: none;
+            background-color: #3b3b4f;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .registration input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff00cc;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .registration input[type="submit"]:hover {
+            background-color: #3333ff;
+        }
+        .navbar {
+    background-color: #333; /* Темний фон */
+    padding: 15px 0;
+    width: 80%; /* Ширина навігаційної панелі */
+    max-width: 800px; /* Максимальна ширина панелі */
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.9); /* Тінь тільки вниз */
+   
+    text-align: center; /* Центрування тексту */
+}
+
+.navbar ul {
+    list-style: none; /* Видаляє маркери списку */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Центрує елементи */
+}
+
+.navbar li {
+    margin: 0 15px; /* Відступи між кнопками */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #555; /* Зміна кольору при наведенні */
+    border-radius: 4px; /* Заокруглені кути при наведенні */
+}   
+    </style>
+    <script>
+        function scrollToSection(section) {
+            document.querySelector(section).scrollIntoView({ behavior: 'smooth' });
+        }
+        
+
+        window.onscroll = function() {
+            const registrationSection = document.querySelector('#registration');
+            const scrollTopButton = document.getElementById('scrollTopButton');
+            const scrollToRegistrationButton = document.getElementById('scrollToRegistrationButton');
+            
+            // Висота сторінки і позиція скролу
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            const registrationTop = registrationSection.offsetTop;
+            const registrationHeight = registrationSection.offsetHeight;
+            
+            // Показуємо кнопку для повернення до верху, якщо прокрутили вниз
+            if (scrollTop > 200) {
+                scrollTopButton.style.display = 'block';
+            } else {
+                scrollTopButton.style.display = 'none';
+            }
+            
+            // Показуємо кнопку до реєстрації, якщо вона не видна
+            if (scrollTop + windowHeight < registrationTop || scrollTop > registrationTop + registrationHeight) {
+                scrollToRegistrationButton.style.display = 'block';
+            } else {
+                scrollToRegistrationButton.style.display = 'none';
+            }
+        };
+        
+    </script>
+</head>
+<body>
+    <nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+    <header>
+        <h1 class="gradient-text">The Best Game of All Time!</h1>
+        <button id="scrollToRegistrationButton" class="scroll-button" onclick="scrollToSection('#registration')">Go to Registration</button>
+    </header>
+
+    <div class="content">
+        <img src="https://th.bing.com/th/id/R.76d5a4d432f238aa19d6c44214a9e4fb?rik=E6fbsnH7D4gJHw&riu=http%3a%2f%2fddragon.leagueoflegends.com%2fcdn%2fimg%2fchampion%2fsplash%2fVarus_0.jpg&ehk=fl0Lr2baYPfpS4fyUIPRH3sy%2bOr2R4r%2fBXQ0W9O4p5c%3d&risl=&pid=ImgRaw&r=0" alt="Left side image" class="side-image-left">
+        <img src="https://images.alphacoders.com/130/thumb-1920-1303961.jpg" alt="Right side image" class="side-image-right">
+
+        <h2>The Legend of Zelda: Ocarina of Time</h2>
+
+        <p>
+            Released in 1998, *The Legend of Zelda: Ocarina of Time* is often hailed as one of the greatest video games ever made. 
+            It was a groundbreaking title that set new standards for 3D open-world action-adventure games. 
+            Players take on the role of Link, a young boy destined to save the kingdom of Hyrule from the evil Ganondorf. 
+        </p>
+
+        <img src="https://th.bing.com/th/id/OIP.WdbtVFnWYmgXUhQqj1mgIwHaFj?rs=1&pid=ImgDetMain" alt="Zelda Ocarina of Time gameplay" class="game-image">
+
+        <p>
+            The game introduces players to a vast world full of puzzles, dungeons, and complex characters. 
+            Its innovative use of time travel, as Link alternates between his childhood and adulthood, 
+            adds a layer of depth to both the story and gameplay. The Ocarina, a magical instrument, plays a central role, allowing Link to solve puzzles and manipulate time.
+        </p>
+
+        <img src="https://th.bing.com/th/id/OIP.pA1kGvIncbtMeS5GhprUDQHaEK?rs=1&pid=ImgDetMain" alt="Zelda Ocarina of Time scenes" class="game-image">
+
+        <p>
+            *Ocarina of Time* was praised for its combat mechanics, dungeon design, and emotional depth. 
+            The game's story is richly intertwined with the lore of the Zelda universe, and its impact on the gaming industry is still felt today. 
+            From the iconic soundtrack to its unforgettable boss battles, *Ocarina of Time* remains a masterpiece in gaming history.
+        </p>
+
+        <button id="scrollTopButton" class="scroll-button" onclick="scrollToSection('header')">Go to Top</button>
+    </div>
+
+    <div id="registration" class="registration">
+        <h2>Sign Up</h2>
+        <form>
+            <input type="text" placeholder="Your Username" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="password" placeholder="Your Password" required>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+
+</body>
+</html>
